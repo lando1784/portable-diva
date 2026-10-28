@@ -1,0 +1,73 @@
+{
+  "game": "Dragon Age: The Veilguard",
+  "editor": "sliders",
+  "verified": false,
+  "notes": [
+    "Editor con molti slider: le posizioni sono espresse in percentuale della corsa (sinistra = 0%, destra = 100%), assumendo che il centro corrisponda alla media.",
+    "Il viso parte da una miscela di tre preset: scegli i tre più vicini alla forma del viso, poi affina con gli slider.",
+    "Tutto si può ritoccare in seguito allo Specchio della trasformazione al Faro.",
+    "Per Dragon Age: Inquisition vale la stessa logica (stirpe, preset, slider per zona del viso)."
+  ],
+  "sections": [
+    {
+      "title": "Stirpe e corpo",
+      "controls": [
+        {"label": "Stirpe", "type": "choice", "options": [
+          {"value": "Umano", "match": {"identity.lineage_preference": "human"}},
+          {"value": "Elfo", "match": {"identity.lineage_preference": "elf"}},
+          {"value": "Nano", "match": {"identity.lineage_preference": "dwarf"}},
+          {"value": "Qunari", "match": {"identity.lineage_preference": "qunari"}}
+        ]},
+        {"label": "Forma del corpo (triangolo)", "type": "weights", "from": "body.build",
+         "labels": {"lean": "magro", "muscular": "muscoloso", "heavy": "robusto"}},
+        {"label": "Altezza", "type": "slider", "from": "body.height"},
+        {"label": "Peso", "type": "slider", "from": "body.weight"}
+      ]
+    },
+    {
+      "title": "Pelle",
+      "controls": [
+        {"label": "Melanina", "type": "slider", "from": "skin.color", "transform": "darkness"},
+        {"label": "Carnagione", "type": "color", "from": "skin.color"},
+        {"label": "Vitiligine", "type": "slider", "from": "skin.vitiligo"},
+        {"label": "Lentiggini", "type": "slider", "from": "skin.freckles"}
+      ]
+    },
+    {
+      "title": "Viso",
+      "controls": [
+        {"label": "Preset di partenza (3)", "type": "choice", "hint": ["face.shape", "face.jaw_width", "face.cheekbone_prominence"]},
+        {"label": "Fronte – altezza", "type": "slider", "from": "face.forehead_height"},
+        {"label": "Sopracciglia – altezza", "type": "slider", "from": "face.brow_height"},
+        {"label": "Occhi – dimensione", "type": "slider", "from": "face.eye_size"},
+        {"label": "Occhi – distanza", "type": "slider", "from": "face.eye_spacing"},
+        {"label": "Occhi – inclinazione", "type": "slider", "from": "face.eye_tilt"},
+        {"label": "Naso – larghezza", "type": "slider", "from": "face.nose_width"},
+        {"label": "Naso – lunghezza", "type": "slider", "from": "face.nose_length"},
+        {"label": "Naso – dorso", "type": "slider", "from": "face.nose_bridge"},
+        {"label": "Zigomi – prominenza", "type": "slider", "from": "face.cheekbone_prominence"},
+        {"label": "Guance – volume", "type": "slider", "from": "face.cheek_fullness"},
+        {"label": "Bocca – larghezza", "type": "slider", "from": "face.mouth_width"},
+        {"label": "Labbra – volume", "type": "slider", "from": "face.lip_fullness"},
+        {"label": "Mascella – larghezza", "type": "slider", "from": "face.jaw_width"},
+        {"label": "Mento – sporgenza", "type": "slider", "from": "face.chin_prominence"},
+        {"label": "Colore degli occhi", "type": "color", "from": "eyes.color"}
+      ]
+    },
+    {
+      "title": "Capelli e dettagli",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Meches", "type": "color", "from": "hair.highlight_color"},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Sopracciglia", "type": "choice", "hint": ["face.brow_thickness"]},
+        {"label": "Colore delle sopracciglia", "type": "color", "from": ["brows.color", "hair.color"]},
+        {"label": "Trucco labbra", "type": "color", "from": "makeup.lip_color"},
+        {"label": "Tatuaggi", "type": "list", "from": "marks", "types": ["tattoo", "paint"]},
+        {"label": "Cicatrici", "type": "list", "from": "marks", "types": ["scar"]},
+        {"label": "Piercing e gioielli", "type": "list", "from": "marks", "types": ["piercing"]}
+      ]
+    }
+  ]
+}

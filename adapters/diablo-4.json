@@ -1,0 +1,41 @@
+{
+  "game": "Diablo IV",
+  "editor": "discrete",
+  "verified": false,
+  "notes": [
+    "La classe determina la corporatura: il corpo dell'avatar canonico non si può riprodurre, quindi conta solo il viso.",
+    "Ogni classe ha i propri preset e le proprie opzioni (acconciature, segni), quindi il catalogo va compilato per classe.",
+    "Viso, pelle e probabilmente l'acconciatura non si cambiano dopo la creazione; segni e gioielli invece sì."
+  ],
+  "sections": [
+    {
+      "title": "Base",
+      "controls": [
+        {"label": "Tipo di corpo", "type": "choice", "options": [
+          {"value": "Tipo 1 (maschile)", "match": {"identity.presentation": 0}},
+          {"value": "Tipo 2 (femminile)", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Preset", "type": "choice", "hint": ["face.shape", "face.jaw_width", "face.cheekbone_prominence"]},
+        {"label": "Viso (affinamento)", "type": "choice", "hint": ["face.eye_size", "face.nose_width", "face.lip_fullness", "face.chin_prominence"]},
+        {"label": "Tonalità della pelle", "type": "color", "from": "skin.color"},
+        {"label": "Colore degli occhi", "type": "color", "from": "eyes.color"}
+      ]
+    },
+    {
+      "title": "Capelli",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags"]},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"}
+      ]
+    },
+    {
+      "title": "Dettagli",
+      "controls": [
+        {"label": "Trucco", "type": "choice", "hint": ["makeup.eyeliner", "makeup.lip_color", "makeup.blush"]},
+        {"label": "Segni", "type": "list", "from": "marks", "types": ["scar", "tattoo", "paint"]},
+        {"label": "Gioielli", "type": "list", "from": "accessories"}
+      ]
+    }
+  ]
+}

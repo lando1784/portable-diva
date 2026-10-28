@@ -1,0 +1,60 @@
+{
+  "game": "Cyberpunk 2077 (2.x / Phantom Liberty)",
+  "editor": "discrete",
+  "verified": false,
+  "notes": [
+    "Quasi ogni tratto del viso è una lista numerata di varianti (es. naso, bocca e mascella hanno 22 varianti ciascuno): la ricetta indica cosa cercare finché il catalogo non è compilato.",
+    "Il tono di voce è separato dal tipo di corpo.",
+    "Dopo la creazione molte voci si cambiano dallo specchio di casa o da un ripperdoc."
+  ],
+  "sections": [
+    {
+      "title": "Corpo",
+      "controls": [
+        {"label": "Tipo di corpo", "type": "choice", "options": [
+          {"value": "Corpo maschile", "match": {"identity.presentation": 0}},
+          {"value": "Corpo femminile", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Tono di voce", "type": "choice", "options": [
+          {"value": "Voce maschile", "match": {"voice.pitch": 0.25}},
+          {"value": "Voce femminile", "match": {"voice.pitch": 0.75}}
+        ]},
+        {"label": "Tonalità della pelle", "type": "color", "from": "skin.color"}
+      ]
+    },
+    {
+      "title": "Capelli",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Colore della barba", "type": "color", "from": ["facial_hair.color", "hair.color"]}
+      ]
+    },
+    {
+      "title": "Viso",
+      "controls": [
+        {"label": "Occhi", "type": "choice", "hint": ["face.eye_size", "face.eye_spacing", "face.eye_tilt"]},
+        {"label": "Colore degli occhi", "type": "color", "from": "eyes.color"},
+        {"label": "Sopracciglia", "type": "choice", "hint": ["face.brow_thickness", "face.brow_height"]},
+        {"label": "Colore delle sopracciglia", "type": "color", "from": ["brows.color", "hair.color"]},
+        {"label": "Naso", "type": "choice", "count": 22, "hint": ["face.nose_width", "face.nose_length", "face.nose_bridge"]},
+        {"label": "Bocca", "type": "choice", "count": 22, "hint": ["face.lip_fullness", "face.mouth_width"]},
+        {"label": "Mascella", "type": "choice", "count": 22, "hint": ["face.jaw_width", "face.chin_prominence", "face.shape"]},
+        {"label": "Orecchie", "type": "choice", "hint": ["face.ear_size"]},
+        {"label": "Lentiggini", "type": "toggle", "from": "skin.freckles", "threshold": 0.3},
+        {"label": "Rossetto", "type": "color", "from": "makeup.lip_color"},
+        {"label": "Eyeliner", "type": "toggle", "from": "makeup.eyeliner", "threshold": 0.3}
+      ]
+    },
+    {
+      "title": "Segni e modifiche",
+      "controls": [
+        {"label": "Cicatrici", "type": "list", "from": "marks", "types": ["scar"]},
+        {"label": "Tatuaggi", "type": "list", "from": "marks", "types": ["tattoo", "paint"]},
+        {"label": "Cyberware visibile", "type": "list", "from": "marks", "types": ["cyberware"]},
+        {"label": "Piercing", "type": "list", "from": "marks", "types": ["piercing"]}
+      ]
+    }
+  ]
+}

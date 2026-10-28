@@ -1,0 +1,64 @@
+{
+  "game": "Monster Hunter Wilds",
+  "editor": "sliders",
+  "verified": false,
+  "notes": [
+    "Editor molto dettagliato con slider e selettori di colore liberi: i colori si possono riprodurre quasi esattamente inserendo il valore indicato.",
+    "Posizioni degli slider in percentuale della corsa (sinistra = 0%, destra = 100%).",
+    "La community condivide i personaggi tramite codici: in futuro un codice generato dalla ricetta potrebbe fare da formato di importazione.",
+    "Per World e Rise valgono le stesse voci, con nomi leggermente diversi."
+  ],
+  "sections": [
+    {
+      "title": "Corpo",
+      "controls": [
+        {"label": "Tipo di corpo", "type": "choice", "options": [
+          {"value": "Tipo 1", "match": {"identity.presentation": 0}},
+          {"value": "Tipo 2", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Altezza", "type": "slider", "from": "body.height"},
+        {"label": "Colore della pelle", "type": "color", "from": "skin.color"},
+        {"label": "Voce – tono", "type": "slider", "from": "voice.pitch"}
+      ]
+    },
+    {
+      "title": "Viso",
+      "controls": [
+        {"label": "Viso base", "type": "choice", "hint": ["face.shape", "face.face_length"]},
+        {"label": "Contorno – lunghezza", "type": "slider", "from": "face.face_length"},
+        {"label": "Contorno – zigomi", "type": "slider", "from": "face.cheekbone_prominence"},
+        {"label": "Contorno – guance", "type": "slider", "from": "face.cheek_fullness"},
+        {"label": "Contorno – mascella", "type": "slider", "from": "face.jaw_width"},
+        {"label": "Contorno – mento", "type": "slider", "from": "face.chin_prominence"},
+        {"label": "Occhi – dimensione", "type": "slider", "from": "face.eye_size"},
+        {"label": "Occhi – distanza", "type": "slider", "from": "face.eye_spacing"},
+        {"label": "Occhi – inclinazione", "type": "slider", "from": "face.eye_tilt"},
+        {"label": "Iride", "type": "color", "from": "eyes.color"},
+        {"label": "Iride (secondo occhio)", "type": "color", "from": ["eyes.secondary_color", "eyes.color"]},
+        {"label": "Sopracciglia – altezza", "type": "slider", "from": "face.brow_height"},
+        {"label": "Sopracciglia – spessore", "type": "slider", "from": "face.brow_thickness"},
+        {"label": "Naso – larghezza", "type": "slider", "from": "face.nose_width"},
+        {"label": "Naso – lunghezza", "type": "slider", "from": "face.nose_length"},
+        {"label": "Naso – altezza del dorso", "type": "slider", "from": "face.nose_bridge"},
+        {"label": "Bocca – larghezza", "type": "slider", "from": "face.mouth_width"},
+        {"label": "Bocca – labbra", "type": "slider", "from": "face.lip_fullness"},
+        {"label": "Orecchie – dimensione", "type": "slider", "from": "face.ear_size"}
+      ]
+    },
+    {
+      "title": "Capelli e trucco",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Colore secondario dei capelli", "type": "color", "from": "hair.highlight_color"},
+        {"label": "Sopracciglia – colore", "type": "color", "from": ["brows.color", "hair.color"]},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Colore della barba", "type": "color", "from": ["facial_hair.color", "hair.color"]},
+        {"label": "Rossetto", "type": "color", "from": "makeup.lip_color"},
+        {"label": "Eyeliner – intensità", "type": "slider", "from": "makeup.eyeliner"},
+        {"label": "Fard – intensità", "type": "slider", "from": "makeup.blush"},
+        {"label": "Pitture facciali e cicatrici", "type": "list", "from": "marks", "types": ["paint", "scar", "tattoo"]}
+      ]
+    }
+  ]
+}
