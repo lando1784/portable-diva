@@ -21,6 +21,7 @@ adattatore potrà generarli direttamente.
 ```
 schema/avatar.schema.json   descrizione canonica (JSON Schema, dà anche l'autocompletamento negli editor)
 examples/                   un avatar d'esempio e le ricette generate per ogni gioco
+verifiche/                  schede da compilare in gioco per confermare gli adattatori
 adapters/<gioco>.json       come ogni editor traduce i tratti canonici
 portable_diva/              il motore (Python 3, nessuna dipendenza)
 docs/                       note sul modello canonico e sui singoli giochi
@@ -43,22 +44,31 @@ python3 -m portable_diva giochi                                   # adattatori d
 python3 -m portable_diva valida examples/avatar-esempio.json      # controlla un avatar
 python3 -m portable_diva ricetta examples/avatar-esempio.json --gioco dragon-age-veilguard
 python3 -m portable_diva ricetta mio-avatar.json --gioco cyberpunk-2077 -o ricetta.md
+python3 -m portable_diva verifica --gioco dragon-age-origins      # scheda di verifica da compilare in gioco
 python3 -m unittest                                               # test
 ```
 
-## Giochi supportati (v0.1)
+## Giochi supportati
 
-| Adattatore | Gioco | Stato |
+| Serie | Adattatori | Tipo di editor |
 |---|---|---|
-| `pokemon-legends-za` | Pokémon Leggende Z-A (e Scarlatto/Violetto) | da verificare |
-| `dragon-age-veilguard` | Dragon Age: The Veilguard (logica simile a Inquisition) | da verificare |
-| `cyberpunk-2077` | Cyberpunk 2077 | da verificare |
-| `diablo-4` | Diablo IV | da verificare |
-| `monster-hunter-wilds` | Monster Hunter Wilds (logica simile a World/Rise) | da verificare |
+| Pokémon | `pokemon-scarlatto-violetto`, `pokemon-legends-za` | scelte discrete |
+| Dragon Age | `dragon-age-origins`, `dragon-age-2`, `dragon-age-inquisition`, `dragon-age-veilguard` | slider |
+| Monster Hunter | `monster-hunter-world`, `monster-hunter-rise`, `monster-hunter-wilds` | slider + colori liberi |
+| Monster Hunter Stories | `monster-hunter-stories`, `monster-hunter-stories-2` | scelte discrete |
+| Cyberpunk 2077 | `cyberpunk-2077` | scelte discrete numerate |
+| Diablo IV | `diablo-4` | scelte discrete |
 
-"Da verificare" significa che gli adattatori sono costruiti dalla documentazione pubblica degli editor:
-i nomi delle voci, gli intervalli e i cataloghi delle opzioni vanno confermati in gioco.
-Vedi [docs/giochi.md](docs/giochi.md) per le note su ciascun editor e su come completarne il catalogo.
+Tutti gli adattatori sono **da verificare**: sono costruiti dalla documentazione pubblica degli editor,
+quindi nomi delle voci, intervalli e cataloghi delle opzioni vanno confermati in gioco.
+Vedi [docs/giochi.md](docs/giochi.md) per le note su ciascun editor.
+
+## Verificare un gioco
+
+1. Apri la scheda del gioco in [`verifiche/`](verifiche/) (oppure generala con `verifica --gioco <id>`).
+2. Con l'editor del gioco aperto, spunta le voci che trovi e annota nome reale, intervallo e numero di opzioni.
+3. Aggiungi le voci che mancano e segna quelle che non esistono. Le foto dei menu aiutano molto.
+4. Con la scheda compilata si aggiorna l'adattatore e si segna `"verified": true`.
 
 ## Prossimi passi
 

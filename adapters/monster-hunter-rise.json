@@ -1,0 +1,51 @@
+{
+  "game": "Monster Hunter Rise (e Sunbreak)",
+  "editor": "sliders",
+  "verified": false,
+  "notes": [
+    "Struttura simile a World: liste di forme per viso, occhi, naso e bocca, più slider e colori liberi.",
+    "Il trucco ha tre livelli indipendenti, ognuno con tipo, posizione, dimensione e colore: ottimo per pitture e segni.",
+    "L'aspetto (non il viso) si cambia in qualunque momento fuori dalle missioni; viso e corpo richiedono un buono modifica.",
+    "Posizioni degli slider in percentuale della corsa finché non sono calibrate."
+  ],
+  "sections": [
+    {
+      "title": "Base",
+      "controls": [
+        {"label": "Tipo di corpo", "type": "choice", "options": [
+          {"value": "Tipo 1", "match": {"identity.presentation": 0}},
+          {"value": "Tipo 2", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Colore della pelle", "type": "color", "from": "skin.color"},
+        {"label": "Tipo di viso", "type": "choice", "hint": ["face.shape", "face.jaw_width", "face.cheekbone_prominence"]},
+        {"label": "Voce", "type": "choice", "hint": ["voice.pitch"]}
+      ]
+    },
+    {
+      "title": "Viso",
+      "controls": [
+        {"label": "Sopracciglia – tipo", "type": "choice", "hint": ["face.brow_thickness"]},
+        {"label": "Sopracciglia – colore", "type": "color", "from": ["brows.color", "hair.color"]},
+        {"label": "Occhi – tipo", "type": "choice", "hint": ["face.eye_size", "face.eye_tilt"]},
+        {"label": "Occhi – distanza", "type": "slider", "from": "face.eye_spacing"},
+        {"label": "Iride – colore", "type": "color", "from": "eyes.color"},
+        {"label": "Naso – tipo", "type": "choice", "hint": ["face.nose_width", "face.nose_length", "face.nose_bridge"]},
+        {"label": "Naso – posizione verticale", "type": "note", "text": "regola a occhio, guardando il profilo"},
+        {"label": "Bocca – tipo", "type": "choice", "hint": ["face.lip_fullness", "face.mouth_width"]},
+        {"label": "Bocca – posizione verticale", "type": "note", "text": "regola a occhio, guardando il profilo"}
+      ]
+    },
+    {
+      "title": "Capelli e trucco",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Colore della barba", "type": "color", "from": ["facial_hair.color", "hair.color"]},
+        {"label": "Trucco 1–3 (pitture, cicatrici, lentiggini)", "type": "list", "from": "marks", "types": ["paint", "tattoo", "scar"]},
+        {"label": "Lentiggini (come trucco)", "type": "toggle", "from": "skin.freckles", "threshold": 0.3},
+        {"label": "Rossetto", "type": "color", "from": "makeup.lip_color"}
+      ]
+    }
+  ]
+}

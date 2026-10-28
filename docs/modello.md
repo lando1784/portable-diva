@@ -19,7 +19,7 @@ Le regole di base sono queste.
 | `identity` | `presentation`, `apparent_age`, `lineage_preference` | `presentation`: 0 maschile, 1 femminile. `lineage_preference` è un elenco ordinato (`["elf", "human"]`): ogni gioco sceglie la prima stirpe che ha. |
 | `body` | `height`, `weight`, `build` | `build` è un insieme di pesi (`lean`, `muscular`, `heavy`) che il motore normalizza, adatto ai controlli "a triangolo". |
 | `skin` | `color`, `undertone`, `freckles`, `vitiligo`, `dark_circles`, `beauty_marks` | |
-| `face` | `shape`, `face_length`, `forehead_height`, `brow_height`, `brow_thickness`, `eye_size`, `eye_spacing`, `eye_tilt`, `nose_width`, `nose_length`, `nose_bridge`, `cheekbone_prominence`, `cheek_fullness`, `lip_fullness`, `mouth_width`, `jaw_width`, `chin_prominence`, `ear_size` | `shape` è uno tra `oval`, `round`, `square`, `heart`, `long`, `diamond`. |
+| `face` | `shape`, `face_length`, `forehead_height`, `brow_height`, `brow_thickness`, `lash_length`, `eye_size`, `eye_spacing`, `eye_tilt`, `nose_width`, `nose_length`, `nose_bridge`, `cheekbone_prominence`, `cheek_fullness`, `lip_fullness`, `mouth_width`, `jaw_width`, `chin_prominence`, `ear_size` | `shape` è uno tra `oval`, `round`, `square`, `heart`, `long`, `diamond`. |
 | `eyes` | `color`, `secondary_color` | `secondary_color` per l'eterocromia. |
 | `brows` | `color` | Se manca, gli adattatori usano il colore dei capelli. |
 | `hair` | `length`, `texture`, `style_tags`, `bangs`, `color`, `highlight_color` | `style_tags` è libero (`ponytail`, `undercut`, `braid`, …) e serve per scegliere l'acconciatura più simile. |

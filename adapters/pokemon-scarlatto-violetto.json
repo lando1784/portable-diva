@@ -1,0 +1,45 @@
+{
+  "game": "Pokémon Scarlatto e Violetto",
+  "editor": "discrete",
+  "verified": false,
+  "notes": [
+    "Editor a sole scelte discrete, con buone opzioni per il viso: forma degli occhi, lenti colorate, ciglia, sopracciglia, labbra, trucco e lentiggini, ognuno con il suo colore.",
+    "L'aspetto di base, e con esso la tonalità della pelle, si sceglie all'inizio: verifica se si può cambiare dopo.",
+    "Acconciature: 24 in tutto, 19 disponibili dall'inizio; le altre si sbloccano nei negozi."
+  ],
+  "sections": [
+    {
+      "title": "Aspetto di base",
+      "controls": [
+        {"label": "Aspetto di partenza", "type": "choice", "hint": ["identity.presentation", "face.shape"]},
+        {"label": "Tonalità della pelle", "type": "color", "from": "skin.color"}
+      ]
+    },
+    {
+      "title": "Viso",
+      "controls": [
+        {"label": "Occhi", "type": "choice", "hint": ["face.eye_size", "face.eye_tilt"]},
+        {"label": "Lenti colorate", "type": "color", "from": "eyes.color"},
+        {"label": "Ciglia – forma", "type": "choice", "hint": ["face.lash_length", "makeup.eyeliner"]},
+        {"label": "Sopracciglia – forma", "type": "choice", "hint": ["face.brow_thickness"]},
+        {"label": "Sopracciglia – colore", "type": "color", "from": ["brows.color", "hair.color"]},
+        {"label": "Labbra – colore", "type": "color", "from": "makeup.lip_color"},
+        {"label": "Lentiggini", "type": "toggle", "from": "skin.freckles", "threshold": 0.3},
+        {"label": "Nei", "type": "toggle", "from": "skin.beauty_marks"}
+      ]
+    },
+    {
+      "title": "Capelli",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "count": 24, "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"}
+      ]
+    },
+    {
+      "title": "Stile",
+      "controls": [
+        {"label": "Occhiali e accessori", "type": "list", "from": "accessories"}
+      ]
+    }
+  ]
+}

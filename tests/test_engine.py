@@ -75,6 +75,18 @@ class EngineTest(unittest.TestCase):
         row = engine._color(avatar, {"label": "s", "from": ["brows.color", "hair.color"]})
         self.assertTrue(row["setting"].startswith("#222222"))
 
+    def test_age_is_described_in_years(self):
+        recipe = engine.build_recipe(EXAMPLE, engine.load_adapter("dragon-age-origins"))
+        self.assertIn("circa 28 anni", rows(recipe)["Età / rughe"]["reason"])
+
+    def test_checklist_lists_every_control(self):
+        for game_id in engine.list_adapters():
+            with self.subTest(game=game_id):
+                adapter = engine.load_adapter(game_id)
+                sheet = render.to_checklist(adapter)
+                total = sum(len(s["controls"]) for s in adapter["sections"])
+                self.assertEqual(sheet.count("- [ ] **"), total)
+
 
 if __name__ == "__main__":
     unittest.main()

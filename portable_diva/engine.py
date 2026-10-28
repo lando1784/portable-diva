@@ -188,6 +188,8 @@ def _describe(avatar, path):
     name = model.label(path)
     if isinstance(value, bool):
         return f"{name}: {'sì' if value else 'no'}"
+    if path == "identity.apparent_age":
+        return f"{name}: circa {value:g} anni"
     if isinstance(value, (int, float)):
         return f"{name}: {qualitative(value, path)}"
     if isinstance(value, list):

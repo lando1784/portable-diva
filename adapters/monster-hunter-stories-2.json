@@ -1,0 +1,35 @@
+{
+  "game": "Monster Hunter Stories 2: Wings of Ruin",
+  "editor": "discrete",
+  "verified": false,
+  "notes": [
+    "Stile stilizzato con opzioni a scelta: forma del viso, pelle, trucco, voce e acconciature con due colori in posizioni prefissate.",
+    "Dopo la creazione (dal secondo villaggio) si cambiano solo acconciatura, trucco e abiti: viso, pelle e voce vanno scelti subito."
+  ],
+  "sections": [
+    {
+      "title": "Aspetto",
+      "controls": [
+        {"label": "Tipo di corpo", "type": "choice", "options": [
+          {"value": "Tipo 1", "match": {"identity.presentation": 0}},
+          {"value": "Tipo 2", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Forma del viso", "type": "choice", "hint": ["face.shape", "face.jaw_width"]},
+        {"label": "Colore della pelle", "type": "color", "from": "skin.color"},
+        {"label": "Occhi", "type": "choice", "hint": ["face.eye_size", "face.eye_tilt"]},
+        {"label": "Colore degli occhi", "type": "color", "from": "eyes.color"},
+        {"label": "Voce", "type": "choice", "hint": ["voice.pitch"]}
+      ]
+    },
+    {
+      "title": "Capelli e trucco",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli (principale)", "type": "color", "from": "hair.color"},
+        {"label": "Colore dei capelli (secondario)", "type": "color", "from": ["hair.highlight_color", "hair.color"]},
+        {"label": "Trucco", "type": "choice", "hint": ["makeup.eyeliner", "makeup.blush", "makeup.lip_color"]},
+        {"label": "Segni (come trucco)", "type": "list", "from": "marks", "types": ["paint", "scar", "tattoo"]}
+      ]
+    }
+  ]
+}

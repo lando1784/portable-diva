@@ -1,5 +1,5 @@
 {
-  "game": "Pokémon Leggende Z-A (vale in gran parte anche per Scarlatto/Violetto)",
+  "game": "Pokémon Leggende Z-A",
   "editor": "discrete",
   "verified": false,
   "notes": [
@@ -21,7 +21,7 @@
       "controls": [
         {"label": "Forma degli occhi", "type": "choice", "hint": ["face.eye_size", "face.eye_tilt"]},
         {"label": "Colore degli occhi / lenti", "type": "color", "from": "eyes.color"},
-        {"label": "Ciglia", "type": "choice", "hint": ["makeup.eyeliner", "identity.presentation"]},
+        {"label": "Ciglia", "type": "choice", "hint": ["face.lash_length", "makeup.eyeliner"]},
         {"label": "Forma delle sopracciglia", "type": "choice", "hint": ["face.brow_thickness"]},
         {"label": "Colore delle sopracciglia", "type": "color", "from": ["brows.color", "hair.color"]},
         {"label": "Colore delle labbra", "type": "color", "from": "makeup.lip_color"},

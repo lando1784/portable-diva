@@ -1,4 +1,4 @@
-# Diva d'esempio → Pokémon Leggende Z-A (vale in gran parte anche per Scarlatto/Violetto)
+# Diva d'esempio → Pokémon Leggende Z-A
 
 > ⚠️ Adattatore non ancora verificato in gioco: nomi delle voci e intervalli potrebbero non corrispondere esattamente all'editor.
 
@@ -20,7 +20,7 @@
 |---|---|---|
 | Forma degli occhi | scegli l'opzione più vicina | cerca: grandezza degli occhi: sopra la media; inclinazione degli occhi (0 all'ingiù, 1 all'insù): all'insù |
 | Colore degli occhi / lenti | #3f7f5f — scegli la tinta più vicina | colore degli occhi: #3f7f5f (medio, verde) |
-| Ciglia | scegli l'opzione più vicina | cerca: eyeliner: moderate; presentazione (0 maschile, 1 femminile): nettamente femminile |
+| Ciglia | scegli l'opzione più vicina | cerca: lunghezza delle ciglia: nella media; eyeliner: moderate |
 | Forma delle sopracciglia | scegli l'opzione più vicina | cerca: spessore delle sopracciglia: sotto la media |
 | Colore delle sopracciglia | #5a2e1b — scegli la tinta più vicina | colore delle sopracciglia: #5a2e1b (scuro, aranciato/ramato) |
 | Colore delle labbra | #a8424a — scegli la tinta più vicina | colore del rossetto: #a8424a (medio, rossastro) |

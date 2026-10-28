@@ -60,6 +60,7 @@
         "forehead_height": {"$ref": "#/$defs/unit"},
         "brow_height": {"$ref": "#/$defs/unit"},
         "brow_thickness": {"$ref": "#/$defs/unit"},
+        "lash_length": {"$ref": "#/$defs/unit"},
         "eye_size": {"$ref": "#/$defs/unit"},
         "eye_spacing": {"$ref": "#/$defs/unit"},
         "eye_tilt": {"$ref": "#/$defs/unit", "description": "0 all'ingiù, 1 all'insù"},
