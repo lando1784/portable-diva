@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lando1784/portable-diva/diy-diva/schema/avatar.schema.json",
+  "title": "Avatar canonico DIY Diva",
+  "description": "Descrizione di un personaggio indipendente dai giochi. I tratti continui vanno da 0 a 1, con 0.5 = media.",
+  "type": "object",
+  "required": ["schema_version", "name"],
+  "$defs": {
+    "unit": {"type": "number", "minimum": 0, "maximum": 1},
+    "color": {"type": "string", "pattern": "^#[0-9a-fA-F]{6}$"}
+  },
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "0.1"},
+    "name": {"type": "string", "minLength": 1},
+    "identity": {
+      "type": "object",
+      "properties": {
+        "presentation": {"$ref": "#/$defs/unit", "description": "0 maschile, 1 femminile"},
+        "apparent_age": {"type": "number", "minimum": 0},
+        "lineage_preference": {
+          "type": "array", "items": {"type": "string"},
+          "description": "Stirpi in ordine di preferenza, per i giochi fantasy (human, elf, dwarf, qunari, ...)"
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "height": {"$ref": "#/$defs/unit"},
+        "weight": {"$ref": "#/$defs/unit"},
+        "build": {
+          "type": "object",
+          "description": "Pesi relativi, normalizzati dal motore",
+          "properties": {
+            "lean": {"type": "number", "minimum": 0},
+            "muscular": {"type": "number", "minimum": 0},
+            "heavy": {"type": "number", "minimum": 0}
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "skin": {
+      "type": "object",
+      "properties": {
+        "color": {"$ref": "#/$defs/color"},
+        "undertone": {"enum": ["warm", "neutral", "cool"]},
+        "freckles": {"$ref": "#/$defs/unit"},
+        "vitiligo": {"$ref": "#/$defs/unit"},
+        "dark_circles": {"$ref": "#/$defs/unit"},
+        "beauty_marks": {"type": "boolean"}
+      }
+    },
+    "face": {
+      "type": "object",
+      "properties": {
+        "shape": {"enum": ["oval", "round", "square", "heart", "long", "diamond"]},
+        "face_length": {"$ref": "#/$defs/unit"},
+        "forehead_height": {"$ref": "#/$defs/unit"},
+        "brow_height": {"$ref": "#/$defs/unit"},
+        "brow_thickness": {"$ref": "#/$defs/unit"},
+        "lash_length": {"$ref": "#/$defs/unit"},
+        "eye_size": {"$ref": "#/$defs/unit"},
+        "eye_spacing": {"$ref": "#/$defs/unit"},
+        "eye_tilt": {"$ref": "#/$defs/unit", "description": "0 all'ingiù, 1 all'insù"},
+        "nose_width": {"$ref": "#/$defs/unit"},
+        "nose_length": {"$ref": "#/$defs/unit"},
+        "nose_bridge": {"$ref": "#/$defs/unit"},
+        "cheekbone_prominence": {"$ref": "#/$defs/unit"},
+        "cheek_fullness": {"$ref": "#/$defs/unit"},
+        "lip_fullness": {"$ref": "#/$defs/unit"},
+        "mouth_width": {"$ref": "#/$defs/unit"},
+        "jaw_width": {"$ref": "#/$defs/unit"},
+        "chin_prominence": {"$ref": "#/$defs/unit"},
+        "ear_size": {"$ref": "#/$defs/unit"}
+      }
+    },
+    "eyes": {
+      "type": "object",
+      "properties": {
+        "color": {"$ref": "#/$defs/color"},
+        "secondary_color": {"$ref": "#/$defs/color"}
+      }
+    },
+    "brows": {
+      "type": "object",
+      "properties": {"color": {"$ref": "#/$defs/color"}}
+    },
+    "hair": {
+      "type": "object",
+      "properties": {
+        "length": {"enum": ["shaved", "very_short", "short", "medium", "long", "very_long"]},
+        "texture": {"enum": ["straight", "wavy", "curly", "coily"]},
+        "style_tags": {"type": "array", "items": {"type": "string"}},
+        "bangs": {"type": "boolean"},
+        "color": {"$ref": "#/$defs/color"},
+        "highlight_color": {"$ref": "#/$defs/color"}
+      }
+    },
+    "facial_hair": {
+      "type": "object",
+      "properties": {
+        "style": {"enum": ["none", "stubble", "mustache", "goatee", "short_beard", "full_beard"]},
+        "color": {"$ref": "#/$defs/color"}
+      }
+    },
+    "makeup": {
+      "type": "object",
+      "properties": {
+        "eyeliner": {"$ref": "#/$defs/unit"},
+        "blush": {"$ref": "#/$defs/unit"},
+        "lip_color": {"$ref": "#/$defs/color"}
+      }
+    },
+    "voice": {
+      "type": "object",
+      "properties": {"pitch": {"$ref": "#/$defs/unit", "description": "0 grave, 1 acuto"}}
+    },
+    "marks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {"enum": ["scar", "tattoo", "paint", "cyberware", "piercing", "other"]},
+          "area": {"type": "string"},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "accessories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {"type": {"type": "string"}, "description": {"type": "string"}}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}

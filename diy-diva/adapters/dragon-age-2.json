@@ -1,0 +1,65 @@
+{
+  "game": "Dragon Age II",
+  "editor": "sliders",
+  "verified": false,
+  "notes": [
+    "Hawke è sempre umano: la stirpe preferita dell'avatar viene ignorata.",
+    "L'editor è un'evoluzione di quello di Origins: preset, poi slider per zona del viso, con capelli, barba, trucco e tatuaggi.",
+    "La voce di Hawke è fissa per sesso.",
+    "Con il DLC Emporio Nero si può cambiare aspetto in seguito allo specchio della trasformazione.",
+    "Gli slider non mostrano numeri: posizioni in percentuale della corsa."
+  ],
+  "sections": [
+    {
+      "title": "Base",
+      "controls": [
+        {"label": "Sesso", "type": "choice", "options": [
+          {"value": "Maschio", "match": {"identity.presentation": 0}},
+          {"value": "Femmina", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Preset", "type": "choice", "hint": ["face.shape", "face.jaw_width", "face.cheekbone_prominence"]},
+        {"label": "Carnagione", "type": "color", "from": "skin.color"},
+        {"label": "Età / rughe", "type": "choice", "hint": ["identity.apparent_age"]}
+      ]
+    },
+    {
+      "title": "Capelli",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Sopracciglia", "type": "choice", "hint": ["face.brow_thickness"]}
+      ]
+    },
+    {
+      "title": "Viso",
+      "controls": [
+        {"label": "Colore degli occhi", "type": "color", "from": "eyes.color"},
+        {"label": "Occhi – distanza", "type": "slider", "from": "face.eye_spacing"},
+        {"label": "Occhi – dimensione", "type": "slider", "from": "face.eye_size"},
+        {"label": "Occhi – inclinazione", "type": "slider", "from": "face.eye_tilt"},
+        {"label": "Sopracciglia – altezza", "type": "slider", "from": "face.brow_height"},
+        {"label": "Naso – larghezza", "type": "slider", "from": "face.nose_width"},
+        {"label": "Naso – lunghezza", "type": "slider", "from": "face.nose_length"},
+        {"label": "Naso – dorso", "type": "slider", "from": "face.nose_bridge"},
+        {"label": "Bocca – larghezza", "type": "slider", "from": "face.mouth_width"},
+        {"label": "Labbra – volume", "type": "slider", "from": "face.lip_fullness"},
+        {"label": "Mascella – larghezza", "type": "slider", "from": "face.jaw_width"},
+        {"label": "Mento – sporgenza", "type": "slider", "from": "face.chin_prominence"},
+        {"label": "Zigomi", "type": "slider", "from": "face.cheekbone_prominence"},
+        {"label": "Guance – volume", "type": "slider", "from": "face.cheek_fullness"},
+        {"label": "Orecchie – dimensione", "type": "slider", "from": "face.ear_size"}
+      ]
+    },
+    {
+      "title": "Trucco e segni",
+      "controls": [
+        {"label": "Rossetto", "type": "color", "from": "makeup.lip_color"},
+        {"label": "Eyeliner / ombretto", "type": "slider", "from": "makeup.eyeliner"},
+        {"label": "Fard", "type": "slider", "from": "makeup.blush"},
+        {"label": "Tatuaggi", "type": "list", "from": "marks", "types": ["tattoo", "paint"]},
+        {"label": "Cicatrici", "type": "list", "from": "marks", "types": ["scar"]}
+      ]
+    }
+  ]
+}

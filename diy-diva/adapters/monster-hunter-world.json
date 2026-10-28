@@ -1,0 +1,57 @@
+{
+  "game": "Monster Hunter: World (e Iceborne)",
+  "editor": "sliders",
+  "verified": false,
+  "notes": [
+    "Si parte da uno dei preset; poi tipo di viso, naso e bocca si scelgono da liste (circa 20 varianti ciascuno) e si affinano con slider di posizione e forma.",
+    "Il colore della pelle si sceglie da una palette dettagliata: inserisci la tinta più vicina al valore indicato.",
+    "Posizioni degli slider in percentuale della corsa (sinistra = 0%, destra = 100%), finché non sono calibrate.",
+    "Dopo la creazione acconciatura e trucco si cambiano liberamente in camera; viso, pelle e corpo richiedono un buono modifica personaggio."
+  ],
+  "sections": [
+    {
+      "title": "Base",
+      "controls": [
+        {"label": "Preset", "type": "choice", "hint": ["identity.presentation", "face.shape"]},
+        {"label": "Tipo di corpo", "type": "choice", "options": [
+          {"value": "Tipo 1", "match": {"identity.presentation": 0}},
+          {"value": "Tipo 2", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Colore della pelle", "type": "color", "from": "skin.color"},
+        {"label": "Età (rughe)", "type": "choice", "hint": ["identity.apparent_age"]}
+      ]
+    },
+    {
+      "title": "Viso",
+      "controls": [
+        {"label": "Tipo di viso", "type": "choice", "hint": ["face.shape", "face.face_length", "face.jaw_width", "face.cheekbone_prominence"]},
+        {"label": "Fronte", "type": "slider", "from": "face.forehead_height"},
+        {"label": "Sopracciglia – tipo", "type": "choice", "hint": ["face.brow_thickness"]},
+        {"label": "Sopracciglia – altezza", "type": "slider", "from": "face.brow_height"},
+        {"label": "Sopracciglia – colore", "type": "color", "from": ["brows.color", "hair.color"]},
+        {"label": "Occhi – tipo", "type": "choice", "hint": ["face.eye_size", "face.eye_tilt"]},
+        {"label": "Occhi – posizione", "type": "slider", "from": "face.eye_spacing"},
+        {"label": "Occhi – apertura", "type": "slider", "from": "face.eye_size"},
+        {"label": "Ciglia – lunghezza", "type": "slider", "from": "face.lash_length"},
+        {"label": "Iride – colore", "type": "color", "from": "eyes.color"},
+        {"label": "Iride – colore occhio sinistro", "type": "color", "from": ["eyes.secondary_color", "eyes.color"]},
+        {"label": "Naso – tipo", "type": "choice", "hint": ["face.nose_width", "face.nose_length", "face.nose_bridge"]},
+        {"label": "Naso – posizione verticale", "type": "note", "text": "regola a occhio, guardando il profilo"},
+        {"label": "Bocca – tipo", "type": "choice", "hint": ["face.lip_fullness", "face.mouth_width"]},
+        {"label": "Bocca – posizione verticale", "type": "note", "text": "regola a occhio, guardando il profilo"}
+      ]
+    },
+    {
+      "title": "Capelli, barba e trucco",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Colore della barba", "type": "color", "from": ["facial_hair.color", "hair.color"]},
+        {"label": "Trucco / pittura", "type": "list", "from": "marks", "types": ["paint", "tattoo", "scar"]},
+        {"label": "Rossetto", "type": "color", "from": "makeup.lip_color"},
+        {"label": "Voce", "type": "choice", "hint": ["voice.pitch"]}
+      ]
+    }
+  ]
+}

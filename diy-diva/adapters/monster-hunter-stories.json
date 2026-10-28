@@ -1,0 +1,26 @@
+{
+  "game": "Monster Hunter Stories (1, anche nella versione rimasterizzata)",
+  "editor": "discrete",
+  "verified": false,
+  "notes": [
+    "Stile chibi molto stilizzato e poche opzioni, tutte a scelta: contano colori, capelli e presentazione.",
+    "Catalogo da compilare: annota quante varianti ha ogni voce durante la prova."
+  ],
+  "sections": [
+    {
+      "title": "Aspetto",
+      "controls": [
+        {"label": "Genere", "type": "choice", "options": [
+          {"value": "Maschio", "match": {"identity.presentation": 0}},
+          {"value": "Femmina", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Colore della pelle", "type": "color", "from": "skin.color"},
+        {"label": "Viso", "type": "choice", "hint": ["face.shape", "face.eye_size", "face.eye_tilt"]},
+        {"label": "Colore degli occhi", "type": "color", "from": "eyes.color"},
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Voce", "type": "choice", "hint": ["voice.pitch"]}
+      ]
+    }
+  ]
+}

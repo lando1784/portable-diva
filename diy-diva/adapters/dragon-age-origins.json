@@ -1,0 +1,95 @@
+{
+  "game": "Dragon Age: Origins (e Awakening)",
+  "editor": "sliders",
+  "verified": false,
+  "notes": [
+    "Si sceglie stirpe (umano, elfo, nano) e un viso di base (preset), poi si affina con slider raggruppati per zona: pelle, capelli, occhi, naso, bocca, mascella/guance, collo/orecchie.",
+    "Forme di naso, occhi e testa di un preset non sempre funzionano su un altro: scegli prima il preset più vicino, poi gli slider.",
+    "Alcuni utenti segnalano che certi slider 'scattano' al 100% o che il colore degli occhi non cambia: annotalo nella verifica.",
+    "Gli slider non mostrano numeri: le posizioni sono in percentuale della corsa."
+  ],
+  "sections": [
+    {
+      "title": "Stirpe e base",
+      "controls": [
+        {"label": "Stirpe", "type": "choice", "options": [
+          {"value": "Umano", "match": {"identity.lineage_preference": "human"}},
+          {"value": "Elfo", "match": {"identity.lineage_preference": "elf"}},
+          {"value": "Nano", "match": {"identity.lineage_preference": "dwarf"}}
+        ]},
+        {"label": "Sesso", "type": "choice", "options": [
+          {"value": "Maschio", "match": {"identity.presentation": 0}},
+          {"value": "Femmina", "match": {"identity.presentation": 1}}
+        ]},
+        {"label": "Preset del viso", "type": "choice", "hint": ["face.shape", "face.jaw_width", "face.cheekbone_prominence"]},
+        {"label": "Voce", "type": "choice", "hint": ["voice.pitch"]}
+      ]
+    },
+    {
+      "title": "Pelle",
+      "controls": [
+        {"label": "Carnagione", "type": "color", "from": "skin.color"},
+        {"label": "Età / rughe", "type": "choice", "hint": ["identity.apparent_age"]},
+        {"label": "Lentiggini / imperfezioni", "type": "toggle", "from": "skin.freckles", "threshold": 0.3}
+      ]
+    },
+    {
+      "title": "Capelli",
+      "controls": [
+        {"label": "Acconciatura", "type": "choice", "hint": ["hair.length", "hair.texture", "hair.style_tags", "hair.bangs"]},
+        {"label": "Colore dei capelli", "type": "color", "from": "hair.color"},
+        {"label": "Barba", "type": "choice", "hint": ["facial_hair.style"]},
+        {"label": "Sopracciglia", "type": "choice", "hint": ["face.brow_thickness"]}
+      ]
+    },
+    {
+      "title": "Occhi",
+      "controls": [
+        {"label": "Colore degli occhi", "type": "color", "from": "eyes.color"},
+        {"label": "Occhi – distanza", "type": "slider", "from": "face.eye_spacing"},
+        {"label": "Occhi – dimensione", "type": "slider", "from": "face.eye_size"},
+        {"label": "Occhi – inclinazione", "type": "slider", "from": "face.eye_tilt"},
+        {"label": "Sopracciglia – altezza", "type": "slider", "from": "face.brow_height"}
+      ]
+    },
+    {
+      "title": "Naso",
+      "controls": [
+        {"label": "Naso – larghezza", "type": "slider", "from": "face.nose_width"},
+        {"label": "Naso – lunghezza", "type": "slider", "from": "face.nose_length"},
+        {"label": "Naso – dorso", "type": "slider", "from": "face.nose_bridge"}
+      ]
+    },
+    {
+      "title": "Bocca",
+      "controls": [
+        {"label": "Bocca – larghezza", "type": "slider", "from": "face.mouth_width"},
+        {"label": "Labbra – volume", "type": "slider", "from": "face.lip_fullness"}
+      ]
+    },
+    {
+      "title": "Mascella e guance",
+      "controls": [
+        {"label": "Mascella – larghezza", "type": "slider", "from": "face.jaw_width"},
+        {"label": "Mento – sporgenza", "type": "slider", "from": "face.chin_prominence"},
+        {"label": "Zigomi", "type": "slider", "from": "face.cheekbone_prominence"},
+        {"label": "Guance – volume", "type": "slider", "from": "face.cheek_fullness"}
+      ]
+    },
+    {
+      "title": "Collo e orecchie",
+      "controls": [
+        {"label": "Orecchie – dimensione", "type": "slider", "from": "face.ear_size"}
+      ]
+    },
+    {
+      "title": "Trucco e tatuaggi",
+      "controls": [
+        {"label": "Rossetto", "type": "color", "from": "makeup.lip_color"},
+        {"label": "Eyeliner / ombretto", "type": "slider", "from": "makeup.eyeliner"},
+        {"label": "Fard", "type": "slider", "from": "makeup.blush"},
+        {"label": "Tatuaggi", "type": "list", "from": "marks", "types": ["tattoo", "paint"]}
+      ]
+    }
+  ]
+}
