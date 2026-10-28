@@ -1,4 +1,4 @@
-"""Command line: python -m portable_diva {giochi,valida,ricetta,verifica} ..."""
+"""Command line: python -m diy_diva {giochi,valida,ricetta,verifica} ..."""
 
 import argparse
 import json
@@ -9,7 +9,7 @@ from . import engine, model, render
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(prog="portable_diva", description="Avatar portabili tra giochi.")
+    parser = argparse.ArgumentParser(prog="diy_diva", description="Avatar portabili tra giochi.")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("giochi", help="elenca gli adattatori disponibili")
     valida = sub.add_parser("valida", help="controlla un file avatar")

@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from portable_diva import color, engine, model, render
+from diy_diva import color, engine, model, render
 
 ROOT = Path(__file__).resolve().parent.parent
 EXAMPLE = json.loads((ROOT / "examples" / "avatar-esempio.json").read_text(encoding="utf-8"))

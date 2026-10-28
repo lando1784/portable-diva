@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/lando1784/portable-diva/schema/avatar.schema.json",
-  "title": "Avatar canonico Portable Diva",
+  "$id": "https://github.com/lando1784/portable-diva/diy-diva/schema/avatar.schema.json",
+  "title": "Avatar canonico DIY Diva",
   "description": "Descrizione di un personaggio indipendente dai giochi. I tratti continui vanno da 0 a 1, con 0.5 = media.",
   "type": "object",
   "required": ["schema_version", "name"],
